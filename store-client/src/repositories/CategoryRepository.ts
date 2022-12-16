@@ -1,17 +1,15 @@
 import Category from "../models/Category";
 import config from "../config";
 import axios from 'axios';
+import { IRepository } from "./IRepository";
 
-export class CategoryRepository  {
+export class CategoryRepository implements IRepository<Category> {
     urlPrefix = config.remoteRepositoryUrlPrefix
   
     async getAll(): Promise<Category[] | null>{
-      const result = [
-        { id: 1, title: 'Computer' },
-        { id: 2, title: 'Fantasy' },
-      ]
+      const result = await axios.get<Category[]>(`${this.urlPrefix}/category`)
   
-      return result
+      return result.data
     }
     
     async get(id: number|string): Promise<Category | null>{
