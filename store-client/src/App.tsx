@@ -47,6 +47,7 @@ function App() {
   return (
     <div>
       <div>
+      <b><u>Title must be more than 5 characters.</u></b>
         <BookForm book={{}} categoryList={categoryList} callbackFn={onCreateBook} />
         <hr />
       </div>
@@ -65,7 +66,7 @@ function App() {
           <hr />
         </div>
       )}
-      
+
     </div>
   );
 }
