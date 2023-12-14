@@ -34,7 +34,7 @@ function BookForm(props: Props) {
           Title : <input type="text" minLength = {5} defaultValue={props.book.title} ref={titleRef} required/>
         </div>
         <div>
-          Price : <input type="number" step="0.01" min="0" defaultValue={props.book.price} ref={priceRef} />
+          Price : <input type="number" step="0.02" min="0" defaultValue={props.book.price} ref={priceRef} />
         </div>
         <div>
           Stock Amount : <input type="number" min="0" defaultValue={props.book.stockAmount} ref={stockAmountRef} />
